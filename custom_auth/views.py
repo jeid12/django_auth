@@ -10,3 +10,5 @@ def register_user(request):
         user = serializer.save()
         return Response({"user": UserSerializer(user).data}, status=201)
     return Response(serializer.errors, status=400)
+
+
