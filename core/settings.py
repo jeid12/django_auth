@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'custom_auth',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+
+
 
 TEMPLATES = [
     {
@@ -120,3 +124,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'custom_auth.User'
+
+#roles
+AUTH_ROLES=[
+    ("admin", "Admin"),
+    ("user", "User"),
+    ("guest", "Guest"),
+]
+AUTH_DEFAULT_ROLE="guest"
